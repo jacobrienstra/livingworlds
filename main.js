@@ -441,7 +441,7 @@ var CanvasCycle = {
     var name = menu.options[menu.selectedIndex].value;
     this.sceneIdx = menu.selectedIndex;
 
-    if (ua.mobile) {
+    if (true) {
       // no transitions on mobile devices, just switch as fast as possible
       this.inGame = false;
 
@@ -451,23 +451,23 @@ var CanvasCycle = {
 
       CanvasCycle.globalBrightness = 1.0;
       CanvasCycle.loadScene(this.sceneIdx);
-    } else {
-      TweenManager.removeAll({ category: "scenefade" });
-      TweenManager.tween({
-        target: { value: this.globalBrightness, newSceneIdx: this.sceneIdx },
-        duration: Math.floor(this.settings.targetFPS / 2),
-        mode: "EaseInOut",
-        algo: "Quadratic",
-        props: { value: 0.0 },
-        onTweenUpdate: function (tween) {
-          CanvasCycle.globalBrightness = tween.target.value;
-        },
-        onTweenComplete: function (tween) {
-          CanvasCycle.loadScene(tween.target.newSceneIdx);
-        },
-        category: "scenefade",
-      });
-    }
+    // } else {
+    //   TweenManager.removeAll({ category: "scenefade" });
+    //   TweenManager.tween({
+    //     target: { value: this.globalBrightness, newSceneIdx: this.sceneIdx },
+    //     duration: Math.floor(this.settings.targetFPS / 2),
+    //     mode: "EaseInOut",
+    //     algo: "Quadratic",
+    //     props: { value: 0.0 },
+    //     onTweenUpdate: function (tween) {
+    //       CanvasCycle.globalBrightness = tween.target.value;
+    //     },
+    //     onTweenComplete: function (tween) {
+    //       CanvasCycle.loadScene(tween.target.newSceneIdx);
+    //     },
+    //     category: "scenefade",
+    //   });
+    // }
   },
 
   loadScene: function (idx) {
@@ -557,24 +557,24 @@ var CanvasCycle = {
     //MAYBE: remove?
     this.bmp.clear(this.imageData);
 
-    if (ua.mobile) {
+    if (true) {
       // no transition on mobile devices
       this.globalBrightness = 1.0;
-    } else {
-      this.globalBrightness = 0.0;
-      TweenManager.removeAll({ category: "scenefade" });
-      TweenManager.tween({
-        target: { value: 0 },
-        duration: Math.floor(this.settings.targetFPS / 2),
-        mode: "EaseInOut",
-        algo: "Quadratic",
-        props: { value: 1.0 },
-        onTweenUpdate: function (tween) {
-          CanvasCycle.globalBrightness = tween.target.value;
-        },
-        category: "scenefade",
-      });
-    }
+    // } else {
+    //   this.globalBrightness = 0.0;
+    //   TweenManager.removeAll({ category: "scenefade" });
+    //   TweenManager.tween({
+    //     target: { value: 0 },
+    //     duration: Math.floor(this.settings.targetFPS / 2),
+    //     mode: "EaseInOut",
+    //     algo: "Quadratic",
+    //     props: { value: 1.0 },
+    //     onTweenUpdate: function (tween) {
+    //       CanvasCycle.globalBrightness = tween.target.value;
+    //     },
+    //     category: "scenefade",
+    //   });
+    // }
 
     this.startSceneAudio();
   },
@@ -972,25 +972,25 @@ var CanvasCycle = {
     if (scene.sound && this.settings.sound && window.Audio && this.audioTrack) {
       var track = this.audioTrack;
 
-      if (ua.iphone || ua.ipad) {
+      if (true) {
         // no transition here, so just stop sound
         track.pause();
-      } else {
-        TweenManager.removeAll({ category: "audio" });
-        TweenManager.tween({
-          target: track,
-          duration: Math.floor(CanvasCycle.settings.targetFPS / 2),
-          mode: "EaseOut",
-          algo: "Linear",
-          props: { volume: 0 },
-          onTweenComplete: function (tween) {
-            // ff has weird delay with volume fades, so allow sound to continue
-            // will be stopped when next one starts
-            if (!ua.ff) track.pause();
-          },
-          category: "audio",
-        });
-      }
+      // } else {
+      //   TweenManager.removeAll({ category: "audio" });
+      //   TweenManager.tween({
+      //     target: track,
+      //     duration: Math.floor(CanvasCycle.settings.targetFPS / 2),
+      //     mode: "EaseOut",
+      //     algo: "Linear",
+      //     props: { volume: 0 },
+      //     onTweenComplete: function (tween) {
+      //       // ff has weird delay with volume fades, so allow sound to continue
+      //       // will be stopped when next one starts
+      //       if (!ua.ff) track.pause();
+      //     },
+      //     category: "audio",
+      //   });
+      // }
     }
   },
 
