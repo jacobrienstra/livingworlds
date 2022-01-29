@@ -127,7 +127,7 @@ var CanvasCycle = {
     if (!this.inited) {
       this.inited = true;
       $("container").style.display = "block";
-      $("d_options").style.display = "block";
+      $("d_options").style.display = "none";
       $("d_timeline").style.display = "none";
 
       FrameCount.init();
@@ -1020,9 +1020,9 @@ var CanvasCycle = {
       $("d_options").style.opacity = startValue;
       // $("btn_options_toggle").innerHTML = "&#x00AB; Hide Options";
 
-      $("d_timeline").style.width = "0px";
-      $("d_timeline").style.display = "";
-      $("d_timeline").style.opacity = startValue;
+      // $("d_timeline").style.width = "0px";
+      // $("d_timeline").style.display = "";
+      // $("d_timeline").style.opacity = startValue;
     } else {
       startValue = 1.0;
       if (this.optTween) startValue = this.optTween.target.value;
@@ -1042,11 +1042,11 @@ var CanvasCycle = {
         // $("btn_options_toggle").style.left =
         // "" + Math.floor(tween.target.value * 128) + "px";
 
-        var tl_sty = $("d_timeline").style;
-        tl_sty.opacity = tween.target.value;
-        tl_sty.width = "" + Math.floor(tween.target.value * CC.TL_WIDTH) + "px";
-        tl_sty.marginRight =
-          "" + Math.floor(tween.target.value * CC.TL_MARGIN) + "px";
+        // var tl_sty = $("d_timeline").style;
+        // tl_sty.opacity = tween.target.value;
+        // tl_sty.width = "" + Math.floor(tween.target.value * CC.TL_WIDTH) + "px";
+        // tl_sty.marginRight =
+        //   "" + Math.floor(tween.target.value * CC.TL_MARGIN) + "px";
 
         $("d_header").style.marginLeft =
           "" +
