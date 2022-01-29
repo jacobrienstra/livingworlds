@@ -1019,7 +1019,7 @@ var CanvasCycle = {
       endValue = 1.0;
       $("d_options").style.display = "";
       $("d_options").style.opacity = startValue;
-      $("btn_options_toggle").innerHTML = "&#x00AB; Hide Options";
+      // $("btn_options_toggle").innerHTML = "&#x00AB; Hide Options";
 
       $("d_timeline").style.width = "0px";
       $("d_timeline").style.display = "";
@@ -1028,7 +1028,7 @@ var CanvasCycle = {
       startValue = 1.0;
       if (this.optTween) startValue = this.optTween.target.value;
       endValue = 0;
-      $("btn_options_toggle").innerHTML = "Show Options &#x00BB;";
+      // $("btn_options_toggle").innerHTML = "Show Options &#x00BB;";
     }
 
     this.optTween = TweenManager.tween({
