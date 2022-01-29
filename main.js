@@ -51,7 +51,7 @@ var CanvasCycle = {
   OPT_MARGIN: 15,
 
   settings: {
-    showOptions: true,
+    showOptions: false,
     targetFPS: 60,
     zoomFull: false,
     blendShiftEnabled: true,
@@ -713,7 +713,7 @@ var CanvasCycle = {
       this.lastHighlightColor = this.highlightColor;
       this.oldTimeOffset = this.timeOffset;
 
-      // TweenManager.logic(this.clock);
+      TweenManager.logic(this.clock);
       this.clock++;
       this.scaleAnimate();
 
@@ -1040,8 +1040,8 @@ var CanvasCycle = {
       onTweenUpdate: function (tween) {
         // $('d_options').style.left = '' + Math.floor(tween.target.value - 150) + 'px';
         $("d_options").style.opacity = tween.target.value;
-        $("btn_options_toggle").style.left =
-          "" + Math.floor(tween.target.value * 128) + "px";
+        // $("btn_options_toggle").style.left =
+        // "" + Math.floor(tween.target.value * 128) + "px";
 
         var tl_sty = $("d_timeline").style;
         tl_sty.opacity = tween.target.value;
