@@ -790,10 +790,10 @@ var CanvasCycle = {
       // scale up to full size
       var totalNativeWidth =
         this.contentSize.width + this.contentSize.optionsWidth;
-      var maxScaleX = (this.winSize.width - 30) / totalNativeWidth;
+      var maxScaleX = this.winSize.width / totalNativeWidth;
 
       var totalNativeHeight = this.contentSize.height;
-      var maxScaleY = (this.winSize.height - 30) / totalNativeHeight;
+      var maxScaleY = this.winSize.height / totalNativeHeight;
 
       var maxScale = Math.min(maxScaleX, maxScaleY);
 
@@ -875,6 +875,7 @@ var CanvasCycle = {
         "px";
       div.style.top =
         "" +
+        // "0" +
         Math.floor(
           this.winSize.height / 2 -
             (this.contentSize.height * this.contentSize.scale) / 2
