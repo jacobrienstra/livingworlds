@@ -704,14 +704,17 @@ var CanvasCycle = {
       this.lastHighlightColor = this.highlightColor;
       this.oldTimeOffset = this.timeOffset;
 
-      TweenManager.logic(this.clock);
+      // TweenManager.logic(this.clock);
       this.clock++;
       this.scaleAnimate();
 
       if (this.inGame)
-        setTimeout(function () {
+        // setTimeout(function () {
+        //   CanvasCycle.animate();
+        // }, 100 /*was: 1  -- result in less cpu throttle*/);
+        requestAnimationFrame(function () {
           CanvasCycle.animate();
-        }, 100 /*was: 1  -- result in less cpu throttle*/);
+        });
     }
   },
 
