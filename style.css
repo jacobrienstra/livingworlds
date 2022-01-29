@@ -78,6 +78,10 @@ div.clear {
   left: 0px;
 }
 
+#d_header {
+  display: none;
+}
+
 #d_loading {
   position: absolute;
   width: 32px;

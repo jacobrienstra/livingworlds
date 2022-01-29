@@ -480,13 +480,12 @@ var CanvasCycle = {
       var url =
         "file=" +
         scene.name +
-        "&view=" +
+        "&month=" +
         scene.month +
         "&script=" +
-        scene.scpt + ".js";
-    } else
-      var url =
-        "file=" + scene.name + ".js";
+        scene.scpt +
+        ".js";
+    } else var url = "file=" + scene.name + ".js";
     var scr = document.createElement("SCRIPT");
     scr.type = "text/javascript";
     scr.src = url;
