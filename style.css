@@ -9,6 +9,11 @@ body {
   width: 2048px;
 }
 
+.section,
+.label {
+  visibility: hidden;
+}
+
 a {
   color: #888;
   text-decoration: none;

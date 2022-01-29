@@ -51,7 +51,7 @@ var CanvasCycle = {
   OPT_MARGIN: 15,
 
   settings: {
-    showOptions: false,
+    showOptions: true,
     targetFPS: 60,
     zoomFull: false,
     blendShiftEnabled: true,
