@@ -1053,10 +1053,11 @@ var CanvasCycle = {
           Math.floor(tween.target.value * (CC.TL_WIDTH + CC.TL_MARGIN)) +
           "px";
 
-        CanvasCycle.contentSize.optionsWidth = Math.floor(
-          tween.target.value *
-            (CC.OPT_WIDTH + CC.OPT_MARGIN + CC.TL_WIDTH + CC.TL_MARGIN)
-        );
+        CanvasCycle.contentSize.optionsWidth = 0;
+        // Math.floor(
+        //   tween.target.value *
+        //     (CC.OPT_WIDTH + CC.OPT_MARGIN + CC.TL_WIDTH + CC.TL_MARGIN)
+        // );
         CanvasCycle.handleResize();
       },
       onTweenComplete: function (tween) {
