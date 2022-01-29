@@ -478,16 +478,15 @@ var CanvasCycle = {
     var scene = scenes[idx];
     if (this.stillLife == null) {
       var url =
-        "scene.php?file=" +
+        "file=" +
         scene.name +
         "&view=" +
         scene.month +
         "&script=" +
-        scene.scpt +
-        "&callback=CanvasCycle.initScene";
+        scene.scpt + ".js";
     } else
       var url =
-        "scene.php?file=" + scene.name + "&callback=CanvasCycle.initScene";
+        "file=" + scene.name + ".js";
     var scr = document.createElement("SCRIPT");
     scr.type = "text/javascript";
     scr.src = url;
