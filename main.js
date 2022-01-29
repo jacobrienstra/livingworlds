@@ -451,7 +451,8 @@ var CanvasCycle = {
 
       CanvasCycle.globalBrightness = 1.0;
       CanvasCycle.loadScene(this.sceneIdx);
-    // } else {
+    }
+    //else {
     //   TweenManager.removeAll({ category: "scenefade" });
     //   TweenManager.tween({
     //     target: { value: this.globalBrightness, newSceneIdx: this.sceneIdx },
@@ -560,7 +561,8 @@ var CanvasCycle = {
     if (true) {
       // no transition on mobile devices
       this.globalBrightness = 1.0;
-    // } else {
+    }
+    //else {
     //   this.globalBrightness = 0.0;
     //   TweenManager.removeAll({ category: "scenefade" });
     //   TweenManager.tween({
@@ -975,7 +977,8 @@ var CanvasCycle = {
       if (true) {
         // no transition here, so just stop sound
         track.pause();
-      // } else {
+      }
+      // else {
       //   TweenManager.removeAll({ category: "audio" });
       //   TweenManager.tween({
       //     target: track,
