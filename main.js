@@ -127,7 +127,7 @@ var CanvasCycle = {
     if (!this.inited) {
       this.inited = true;
       $("container").style.display = "block";
-      $("d_options").style.display = "none";
+      $("d_options").style.display = "block";
       $("d_timeline").style.display = "none";
 
       FrameCount.init();
@@ -196,7 +196,7 @@ var CanvasCycle = {
       var prefs = this.cookie.get("settings");
       if (!prefs)
         prefs = {
-          showOptions: false,
+          showOptions: true,
           targetFPS: 60,
           zoomFull: false,
           blendShiftEnabled: true,
@@ -207,6 +207,15 @@ var CanvasCycle = {
       // allow query to override prefs
       for (var key in this.query) {
         prefs[key] = this.query[key];
+      }
+
+      if (prefs) {
+        if (prefs.showOptions) this.toggleOptions();
+        this.setRate(prefs.targetFPS);
+        this.setZoom(prefs.zoomFull);
+        this.setSpeed(prefs.speedAdjust);
+        this.setBlendShift(prefs.blendShiftEnabled);
+        this.setSound(prefs.sound);
       }
 
       // start synced to local time
