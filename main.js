@@ -212,7 +212,6 @@ var CanvasCycle = {
       if (prefs) {
         if (prefs.showOptions) this.toggleOptions();
         this.setRate(prefs.targetFPS);
-        this.setZoom(prefs.zoomFull);
         this.setSpeed(prefs.speedAdjust);
         this.setBlendShift(prefs.blendShiftEnabled);
         this.setSound(prefs.sound);
